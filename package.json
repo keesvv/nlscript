@@ -1,7 +1,7 @@
 {
   "name": "nlscript",
   "version": "1.0.0",
-  "main": "dist",
+  "main": "dist/src",
   "license": "MIT",
   "scripts": {
     "start": "node .",
