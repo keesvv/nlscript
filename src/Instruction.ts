@@ -5,7 +5,14 @@ class Instruction {
     public definition: InstructionDefinition,
     public rawContent: string
   ) {
-    this.args = this.rawContent.split(' ').slice(1);
+    this.args = this.rawContent.match(/(".*?"|[^"\s]+)+(?=\s*|\s*$)/g)
+      .slice(1)
+      .map((arg) => {
+        if (arg.startsWith('"') && arg.endsWith('"')) {
+          return arg.slice(1, arg.length - 1);
+        }
+        return arg;
+      });
   }
 
   public args: string[];
