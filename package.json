@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node .",
-    "compile": "tsc -b",
+    "compile": "tsc",
     "watch": "tsc -w"
   },
   "dependencies": {},
