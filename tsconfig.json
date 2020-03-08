@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "moduleResolution": "Node",
     "removeComments": true,
     "sourceMap": true,
