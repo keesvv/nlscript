@@ -1,11 +1,5 @@
 import Instruction from './Instruction';
-import InstructionDefinition from './InstructionDefinition';
-
-const definitions = new Array<InstructionDefinition>(
-  new InstructionDefinition('maak', (i) => {
-    console.log(i.args);
-  })
-);
+import definitions from './definitions';
 
 class Parser {
   constructor(
