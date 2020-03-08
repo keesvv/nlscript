@@ -1,0 +1,2 @@
+maak str "Hallo, wereld!";
+toon str;
