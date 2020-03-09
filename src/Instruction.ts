@@ -1,7 +1,9 @@
 import InstructionDefinition from './InstructionDefinition';
+import Module from './Module';
 
 class Instruction {
   constructor(
+    public module: Module,
     public definition: InstructionDefinition,
     public rawContent: string
   ) {
