@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node .",
+    "dev": "nodemon --inspect .",
     "compile": "tsc",
     "watch": "tsc -w",
     "postinstall": "yarn compile"
