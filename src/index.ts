@@ -1,13 +1,13 @@
-import fs from 'fs';
 import Parser from './Parser';
+import Engine from './Engine';
 
-const content = fs.readFileSync(process.argv[2], { encoding: 'utf8' });
-const parser = new Parser(content);
-
-const instructions = parser.parse();
+const parser = new Parser();
+const engine = new Engine();
 
 (async () => {
-  for (const instruction of instructions) {
-    await instruction.execute();
-  }
+  await parser.loadContentFromFile(process.argv[2]);
+
+  const instructions = parser.parse();
+
+  await engine.execute(instructions);
 })();
