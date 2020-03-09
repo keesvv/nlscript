@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node .",
     "compile": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "postinstall": "yarn compile"
   },
   "dependencies": {},
   "devDependencies": {
