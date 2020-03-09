@@ -1,2 +1,2 @@
 maak str "Hallo, wereld!";
-toon str;
+scherm.toon str;
