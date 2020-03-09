@@ -1,7 +1,7 @@
 import Module from "../Module";
 
-import global from './global';
+import globaal from './globaal';
 
 export default new Array<Module>(
-  global
+  globaal
 );

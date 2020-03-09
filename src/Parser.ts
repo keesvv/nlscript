@@ -19,7 +19,7 @@ class Parser {
       prefix.module = content[0];
       prefix.definition = content[1];
     } else {
-      prefix.module = 'global';
+      prefix.module = 'globaal';
       prefix.definition = rawPrefix;
     }
 
@@ -35,7 +35,6 @@ class Parser {
     return this.rawInstructions
       .map((i) => {
         const prefix = this.parsePrefix(i.split(' ')[0]);
-        console.log(prefix);
         
         const _module = modules.find(j => j.keyword === prefix.module);
 
