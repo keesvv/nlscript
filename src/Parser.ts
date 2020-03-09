@@ -7,15 +7,17 @@ class Parser {
 
   public rawInstructions: string[];
 
-  private parsePrefix(rawPrefix: string) {
+  private static parsePrefix(rawPrefix: string) {
     const content = rawPrefix.split('.');
     const prefix = {
       module: '',
       definition: ''
-    }
+    };
 
     if (content.length === 2) {
+      // eslint-disable-next-line prefer-destructuring
       prefix.module = content[0];
+      // eslint-disable-next-line prefer-destructuring
       prefix.definition = content[1];
     } else {
       prefix.module = 'globaal';
@@ -31,35 +33,35 @@ class Parser {
         if (err) {
           reject(err);
         }
-  
+
         resolve(data);
       });
-    })
+    });
   }
 
   parse(): Array<Instruction> {
     this.rawInstructions = this.content
       .split(';')
-      .map(i => i.trim())
-      .filter(i => i.length);
+      .map((i) => i.trim())
+      .filter((i) => i.length);
 
     return this.rawInstructions
       .map((i) => {
-        const prefix = this.parsePrefix(i.split(' ')[0]);
-        
-        const _module = modules.find(j => j.keyword === prefix.module);
+        const prefix = Parser.parsePrefix(i.split(' ')[0]);
 
-        if (!_module) {
+        const module = modules.find((j) => j.keyword === prefix.module);
+
+        if (!module) {
           throw new Error('Module not found');
         }
-        
-        const definition = _module.definitions.find(j => j.keyword === prefix.definition);
+
+        const definition = module.definitions.find((j) => j.keyword === prefix.definition);
 
         if (!definition) {
           throw new Error('Instruction not found');
         }
 
-        return new Instruction(_module, definition, i);
+        return new Instruction(module, definition, i);
       });
   }
 }

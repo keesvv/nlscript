@@ -9,4 +9,4 @@ export default new Module({
   definitions: [
     new InstructionDefinition('maak', maak)
   ]
-})
+});

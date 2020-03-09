@@ -11,4 +11,4 @@ export default new Module({
     new InstructionDefinition('toon', toon),
     new InstructionDefinition('wis', wis)
   ]
-})
+});

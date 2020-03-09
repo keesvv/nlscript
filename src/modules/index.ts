@@ -1,11 +1,11 @@
-import Module from "../Module";
+import Module from '../Module';
 
 import globaal from './globaal';
 import scherm from './scherm';
 import proces from './proces';
 
-export default new Array<Module>(
+export default [
   globaal,
   scherm,
   proces
-);
+];
