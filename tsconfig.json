@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "allowJs": false,
+    "noEmitOnError": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "pretty": true,
     "target": "ES2017",
     "module": "CommonJS",
     "allowSyntheticDefaultImports": true,
