@@ -19,8 +19,8 @@ class Instruction {
 
   public args: string[];
 
-  public execute(): void {
-    this.definition.fn(this);
+  public async execute(): Promise<void> {
+    await this.definition.fn(this);
   }
 }
 

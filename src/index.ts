@@ -6,4 +6,8 @@ const parser = new Parser(content);
 
 const instructions = parser.parse();
 
-instructions.forEach(i => i.execute());
+(async () => {
+  for (const instruction of instructions) {
+    await instruction.execute();
+  }
+})();
