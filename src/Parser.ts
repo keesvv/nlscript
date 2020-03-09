@@ -1,10 +1,9 @@
+import fs from 'fs';
 import Instruction from './Instruction';
 import modules from './modules';
 
 class Parser {
-  constructor(
-    public content: string
-  ) {}
+  public content: string;
 
   public rawInstructions: string[];
 
@@ -24,6 +23,18 @@ class Parser {
     }
 
     return prefix;
+  }
+
+  async loadContentFromFile(filePath: string): Promise<void> {
+    this.content = await new Promise((resolve, reject) => {
+      fs.readFile(filePath, { encoding: 'utf8' }, (err, data) => {
+        if (err) {
+          reject(err);
+        }
+  
+        resolve(data);
+      });
+    })
   }
 
   parse(): Array<Instruction> {
