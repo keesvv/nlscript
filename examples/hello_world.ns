@@ -1,2 +1,0 @@
-maak str "Hallo, wereld!";
-scherm.toon str;

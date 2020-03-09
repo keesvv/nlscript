@@ -1,0 +1,2 @@
+maak x "Hallo, wereld!";
+scherm.toon x;
