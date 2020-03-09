@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "dist/src",
   "license": "MIT",
+  "bin": {
+    "nlscript": "./bin/nlscript"
+  },
   "scripts": {
     "start": "node .",
     "compile": "tsc",
