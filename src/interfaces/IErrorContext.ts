@@ -3,5 +3,5 @@
 export default interface IErrorContext {
   filename: string;
   line: string;
-  range: number[];
+  error: string;
 };

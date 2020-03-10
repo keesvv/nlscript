@@ -53,7 +53,7 @@ class Parser {
           throw new ModuleNotFoundError(prefix.module, {
             line: i,
             filename: '',
-            range: []
+            error: prefix.module
           });
         }
 
