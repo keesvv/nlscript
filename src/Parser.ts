@@ -49,13 +49,13 @@ class Parser {
         const module = modules.find((j) => j.keyword === prefix.module);
 
         if (!module) {
-          throw new Error('Module not found');
+          throw new Error(`Module not found: '${prefix.module}'.`);
         }
 
         const definition = module.definitions.find((j) => j.keyword === prefix.definition);
 
         if (!definition) {
-          throw new Error('Instruction not found');
+          throw new Error(`Instruction '${prefix.definition}' not found in module '${prefix.module}'.`);
         }
 
         return new Instruction(module, definition, i);
