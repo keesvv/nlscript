@@ -1,6 +1,7 @@
 import Instruction from './Instruction';
 import Preprocessor from './Preprocessor';
 import ModuleNotFoundError from './errors/ModuleNotFoundError';
+import InstructionNotFoundError from './errors/InstructionNotFoundError';
 import modules from './modules';
 
 class Parser {
@@ -52,7 +53,6 @@ class Parser {
         if (!module) {
           throw new ModuleNotFoundError(prefix.module, {
             line: i,
-            filename: '',
             error: prefix.module
           });
         }
@@ -60,7 +60,10 @@ class Parser {
         const definition = module.definitions.find((j) => j.keyword === prefix.definition);
 
         if (!definition) {
-          throw new Error(`Instruction '${prefix.definition}' not found in module '${prefix.module}'.`);
+          throw new InstructionNotFoundError(prefix.definition, prefix.module, {
+            line: i,
+            error: prefix.definition
+          });
         }
 
         return new Instruction(module, definition, i);
