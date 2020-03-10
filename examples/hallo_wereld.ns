@@ -1,2 +1,8 @@
+# Clear the screen before printing text
+scherm.wis;
+
+# Create a variable called 'x' which stores the text "Hallo, wereld!"
 maak x "Hallo, wereld!";
+
+# Display the contents of the 'x' variable on the screen
 scherm.toon x;
