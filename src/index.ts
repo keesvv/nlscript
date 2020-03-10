@@ -15,7 +15,9 @@ import Preprocessor from './Preprocessor';
       error.printError();
     } else {
       // eslint-disable-next-line no-console
-      console.log('An unexpected error occured.');
+      console.log('An unexpected error occured. See output below:');
+      // eslint-disable-next-line no-console
+      console.trace(error);
     }
 
     process.exit(1);
