@@ -1,4 +1,5 @@
 import Instruction from './Instruction';
+import Preprocessor from './Preprocessor';
 import modules from './modules';
 
 class Parser {
@@ -38,6 +39,7 @@ class Parser {
   }
 
   parse(): Array<Instruction> {
+    this.content = Preprocessor.preprocess(this.content);
     this.extractRawInstructions();
 
     return this.rawInstructions
