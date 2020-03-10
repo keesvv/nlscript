@@ -13,7 +13,9 @@
     "watch": "tsc -w",
     "postinstall": "yarn compile"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
   "devDependencies": {
     "@types/node": "^13.9.0",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
