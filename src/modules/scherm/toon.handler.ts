@@ -1,7 +1,7 @@
 import Instruction from '../../Instruction';
-import storage from '../../storage';
+import Storage from '../../Storage';
 
 export default (i: Instruction) => {
   // eslint-disable-next-line no-console
-  console.log(storage.get(i.args[0]));
+  console.log(Storage.get(i.args[0]));
 };

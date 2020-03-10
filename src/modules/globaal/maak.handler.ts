@@ -1,6 +1,6 @@
 import Instruction from '../../Instruction';
-import storage from '../../storage';
+import Storage from '../../Storage';
 
 export default (i: Instruction) => {
-  storage.set(i.args[0], i.args[1]);
+  Storage.set(i.args[0], i.args[1]);
 };
