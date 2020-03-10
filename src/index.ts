@@ -6,7 +6,20 @@ import Preprocessor from './Preprocessor';
   const content = await Preprocessor.processFile(process.argv[2]);
 
   const parser = new Parser(content);
-  const instructions = parser.parse();
+  let instructions;
+
+  try {
+    instructions = parser.parse();
+  } catch (error) {
+    if (error.isUserError) {
+      error.printError();
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('An unexpected error occured.');
+    }
+
+    process.exit(1);
+  }
 
   await Engine.execute(instructions);
 })();
