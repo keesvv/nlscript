@@ -30,11 +30,15 @@ class Parser {
     return prefix;
   }
 
-  parse(): Array<Instruction> {
+  private extractRawInstructions() {
     this.rawInstructions = this.content
       .split(';')
       .map((i) => i.trim())
       .filter((i) => i.length);
+  }
+
+  parse(): Array<Instruction> {
+    this.extractRawInstructions();
 
     return this.rawInstructions
       .map((i) => {
