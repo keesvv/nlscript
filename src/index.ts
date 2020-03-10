@@ -1,11 +1,11 @@
 import Parser from './Parser';
 import Engine from './Engine';
-
-const parser = new Parser();
+import Preprocessor from './Preprocessor';
 
 (async () => {
-  await parser.loadContentFromFile(process.argv[2]);
+  const content = await Preprocessor.processFile(process.argv[2]);
 
+  const parser = new Parser(content);
   const instructions = parser.parse();
 
   await Engine.execute(instructions);
