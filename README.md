@@ -1,7 +1,8 @@
-<p style="text-align: center;">
+<center>
   <h1>NLScript</h1>
   <h4>⚡ A scripting language with Dutch instructions, built on Node.js.</h4>
-</p>
+  <br>
+</center>
 
 # Work in progress
 Docs are coming soon.
