@@ -1,5 +1,5 @@
 # proces
-This module contains instructions to manipulate or gain information about the current process.
+This module contains instructions for manipulating or gaining information about the current process.
 
 ## Documentation
 ### `proces.wacht <timeout>;`
