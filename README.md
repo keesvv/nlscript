@@ -5,7 +5,12 @@
 Docs are coming soon.
 
 # Roadmap
-- Support for comments
-- Support for file includes
-- Support for functions
-- More examples
+- [x] Support for comments
+- [ ] Support for preprocessor directives
+- [ ] Support for functions
+- [ ] Support for if-statements
+- [ ] Support for including external modules
+- [ ] A separate repository for all core modules
+- [ ] A package manager 📦
+- [ ] READMEs for every core module
+- [ ] More examples
