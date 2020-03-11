@@ -4,8 +4,50 @@
   <br>
 </center>
 
-# Work in progress
-Docs are coming soon.
+# About
+NLScript is a scripting language that uses Dutch grammar for its syntax, which makes it quite unique. It's meant to be an interpreted and dynamically typed language, but things may change in the future.
+
+NLScript is built to have a very straightforward syntax. Even if you don't speak Dutch, it's still fun to learn a couple of Dutch words along the way.
+
+This project is still in a very early stage of development, but more modules, instructions, examples and documentation are going to be added very soon.
+
+# Getting started
+### Prerequisites
+- Node.js
+- npm or yarn
+- Any operating system
+
+### Installation
+**npm users**
+
+```
+$ npm install -g nlscript
+```
+
+**yarn users**
+
+```
+$ yarn global add nlscript
+```
+
+**Manual installation**
+```
+$ git clone git@github.com:nlscript/nlscript.git NLScript
+$ cd NLScript
+$ yarn install
+```
+
+# Examples
+Examples can be found [here](/examples).
+
+# Documentation
+Each module has its own piece of documentation. Documentation can be found in these modules:
+- [globaal](/src/modules/globaal)
+- [proces](/src/modules/proces)
+- [scherm](/src/modules/scherm)
+
+# Contributing
+**Feel free to contribute!** Contributing guidelines are coming soon, but feel free to create pull requests and issues.
 
 # Roadmap
 - [x] Support for comments
@@ -17,5 +59,11 @@ Docs are coming soon.
 - [ ] A separate repository for all core modules
 - [ ] A package manager 📦
 - [ ] Language support for VSCode, Vim, etc.
-- [ ] READMEs for every core module
+- [x] READMEs for every core module
 - [ ] More examples
+
+# License
+NLScript is licensed under the [Apache License 2.0](/LICENSE).
+
+# Credits
+This project was initiated by [Kees van Voorthuizen](https://github.com/keesvv).
