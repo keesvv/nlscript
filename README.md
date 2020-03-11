@@ -42,9 +42,9 @@ Examples can be found [here](/examples).
 
 # Documentation
 Each module has its own piece of documentation. Documentation can be found in these modules:
-- [globaal](/src/modules/globaal)
-- [proces](/src/modules/proces)
-- [scherm](/src/modules/scherm)
+- [globaal](https://github.com/nlscript/core/tree/master/src/modules/globaal)
+- [proces](https://github.com/nlscript/core/tree/master/src/modules/proces)
+- [scherm](https://github.com/nlscript/core/tree/master/src/modules/scherm)
 
 # Contributing
 **Feel free to contribute!** Contributing guidelines are coming soon, but feel free to create pull requests and issues.
