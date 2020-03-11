@@ -2,7 +2,7 @@ import Instruction from './Instruction';
 import Preprocessor from './Preprocessor';
 import ModuleNotFoundError from './errors/ModuleNotFoundError';
 import InstructionNotFoundError from './errors/InstructionNotFoundError';
-import modules from './modules';
+import modules from './modules/src/modules';
 
 class Parser {
   constructor(content: string) {
