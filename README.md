@@ -1,8 +1,8 @@
-<center>
+<div align="center">
   <h1>NLScript</h1>
   <h4>⚡ A scripting language with Dutch instructions, built on Node.js.</h4>
   <br>
-</center>
+</div>
 
 # About
 NLScript is a scripting language that uses Dutch grammar for its syntax, which makes it quite unique. It's meant to be an interpreted and dynamically typed language, but things may change in the future.
