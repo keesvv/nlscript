@@ -59,6 +59,7 @@ Each module has its own piece of documentation. Documentation can be found in th
 - [ ] A separate repository for all core modules
 - [ ] A package manager 📦
 - [ ] Language support for VSCode, Vim, etc.
+- [ ] Unit tests
 - [x] READMEs for every core module
 - [ ] More examples
 
