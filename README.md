@@ -1,5 +1,7 @@
-# nlscript
-⚡ A scripting language using Dutch instructions, built on Node.js.
+<p style="text-align: center;">
+  <h1>NLScript</h1>
+  <h4>⚡ A scripting language with Dutch instructions, built on Node.js.</h4>
+</p>
 
 # Work in progress
 Docs are coming soon.
@@ -10,7 +12,9 @@ Docs are coming soon.
 - [ ] Support for functions
 - [ ] Support for if-statements
 - [ ] Support for including external modules
+- [ ] A logo
 - [ ] A separate repository for all core modules
 - [ ] A package manager 📦
+- [ ] Language support for VSCode, Vim, etc.
 - [ ] READMEs for every core module
 - [ ] More examples
