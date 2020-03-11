@@ -1,7 +1,7 @@
 {
   "name": "nlscript",
   "version": "1.0.0",
-  "main": "dist/src",
+  "main": "dist/nlscript",
   "license": "MIT",
   "bin": {
     "nlscript": "./bin/nlscript"

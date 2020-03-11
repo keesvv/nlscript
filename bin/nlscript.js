@@ -1,1 +1,1 @@
-require('../dist/src');
+require('../dist/nlscript');
