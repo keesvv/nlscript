@@ -9,8 +9,8 @@ class Instruction {
     public prefix: IPrefix,
     public rawContent: string
   ) {
-    this.parseArgs();
     this.updateDefinitions();
+    this.parseArgs();
   }
 
   public module: Module;
@@ -36,7 +36,9 @@ class Instruction {
   }
 
   public async execute(): Promise<void> {
-    this.updateDefinitions();
+    if (!this.module || !this.definition) {
+      this.updateDefinitions();
+    }
 
     if (!this.module) {
       throw new ModuleNotRegisteredError(this.prefix.module, {
