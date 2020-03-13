@@ -7,6 +7,12 @@ class Instruction {
     public definition: IDefinition,
     public rawContent: string
   ) {
+    this.parseArgs();
+  }
+
+  public args: string[];
+
+  public parseArgs(): void {
     this.args = this.rawContent.match(/(".*?"|[^"\s]+)+(?=\s*|\s*$)/g)
       .slice(1)
       .map((arg) => {
@@ -16,8 +22,6 @@ class Instruction {
         return arg;
       });
   }
-
-  public args: string[];
 
   public async execute(): Promise<void> {
     await this.definition.fn(this);
