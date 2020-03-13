@@ -1,10 +1,10 @@
-import InstructionDefinition from './InstructionDefinition';
 import Module from './Module';
+import IDefinition from './interfaces/IDefinition';
 
 class Instruction {
   constructor(
     public module: Module,
-    public definition: InstructionDefinition,
+    public definition: IDefinition,
     public rawContent: string
   ) {
     this.args = this.rawContent.match(/(".*?"|[^"\s]+)+(?=\s*|\s*$)/g)

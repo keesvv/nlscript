@@ -1,10 +1,10 @@
-import InstructionDefinition from './InstructionDefinition';
+import IDefinition from './interfaces/IDefinition';
 
 class Module {
   constructor(data: {
     name: string,
     keyword: string,
-    definitions: Array<InstructionDefinition>
+    definitions: Array<IDefinition>
   }) {
     this.name = data.name;
     this.keyword = data.keyword;
@@ -15,7 +15,7 @@ class Module {
 
   public keyword: string;
 
-  public definitions: Array<InstructionDefinition>;
+  public definitions: Array<IDefinition>;
 }
 
 export default Module;
