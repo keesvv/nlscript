@@ -5,7 +5,20 @@ import Instruction from './Instruction';
 class Engine {
   static async execute(instructions: Array<Instruction>): Promise<void> {
     for (const instruction of instructions) {
-      await instruction.execute();
+      try {
+        await instruction.execute();
+      } catch (error) {
+        if (error.isUserError) {
+          error.printError();
+        } else {
+          // eslint-disable-next-line no-console
+          console.log('An unexpected error occured. See output below:');
+          // eslint-disable-next-line no-console
+          console.trace(error);
+        }
+
+        process.exit(1);
+      }
     }
   }
 }
