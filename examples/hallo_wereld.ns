@@ -1,3 +1,6 @@
+# Use the 'scherm' module
+gebruik scherm;
+
 # Clear the screen before printing text
 scherm.wis;
 
