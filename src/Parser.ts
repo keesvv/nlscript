@@ -1,8 +1,8 @@
 import Instruction from './Instruction';
 import Preprocessor from './Preprocessor';
+import Module from './Module';
 import ModuleNotFoundError from './errors/ModuleNotFoundError';
 import InstructionNotFoundError from './errors/InstructionNotFoundError';
-import modules from './modules/src/modules';
 
 class Parser {
   constructor(content: string) {
@@ -48,7 +48,7 @@ class Parser {
       .map((i) => {
         const prefix = Parser.parsePrefix(i.split(' ')[0]);
 
-        const module = modules.find((j) => j.keyword === prefix.module);
+        const module = Module.registeredModules.find((j) => j.keyword === prefix.module);
 
         if (!module) {
           throw new ModuleNotFoundError(prefix.module, {
