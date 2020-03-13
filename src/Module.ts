@@ -16,6 +16,12 @@ class Module {
   public keyword: string;
 
   public definitions: Array<IDefinition>;
+
+  public static registeredModules: Array<Module> = [];
+
+  public static registerModules(...modules: Array<Module>): void {
+    Module.registeredModules.push(...modules);
+  }
 }
 
 export default Module;
