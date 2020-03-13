@@ -1,8 +1,6 @@
 import Instruction from './Instruction';
 import Preprocessor from './Preprocessor';
-import Module from './Module';
-import ModuleNotFoundError from './errors/ModuleNotFoundError';
-import InstructionNotFoundError from './errors/InstructionNotFoundError';
+import IPrefix from './interfaces/IPrefix';
 
 class Parser {
   constructor(content: string) {
@@ -13,24 +11,20 @@ class Parser {
 
   public rawInstructions: string[];
 
-  private static parsePrefix(rawPrefix: string) {
+  private static parsePrefix(rawPrefix: string): IPrefix {
     const content = rawPrefix.split('.');
-    const prefix = {
-      module: '',
-      definition: ''
-    };
 
     if (content.length === 2) {
-      // eslint-disable-next-line prefer-destructuring
-      prefix.module = content[0];
-      // eslint-disable-next-line prefer-destructuring
-      prefix.definition = content[1];
-    } else {
-      prefix.module = 'globaal';
-      prefix.definition = rawPrefix;
+      return {
+        module: content[0],
+        definition: content[1]
+      };
     }
 
-    return prefix;
+    return {
+      module: 'globaal',
+      definition: rawPrefix
+    };
   }
 
   private extractRawInstructions() {
@@ -47,26 +41,7 @@ class Parser {
     return this.rawInstructions
       .map((i) => {
         const prefix = Parser.parsePrefix(i.split(' ')[0]);
-
-        const module = Module.registeredModules.find((j) => j.keyword === prefix.module);
-
-        if (!module) {
-          throw new ModuleNotFoundError(prefix.module, {
-            line: i,
-            error: prefix.module
-          });
-        }
-
-        const definition = module.definitions.find((j) => j.keyword === prefix.definition);
-
-        if (!definition) {
-          throw new InstructionNotFoundError(prefix.definition, prefix.module, {
-            line: i,
-            error: prefix.definition
-          });
-        }
-
-        return new Instruction(module, definition, i);
+        return new Instruction(prefix, i);
       });
   }
 }
