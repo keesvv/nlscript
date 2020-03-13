@@ -27,7 +27,7 @@ class Preprocessor {
         return i;
       })
       .filter((i) => i)
-      .join('\n');
+      .join('');
   }
 }
 
