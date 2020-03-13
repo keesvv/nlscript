@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon --inspect .",
-    "compile": "tsc",
-    "watch": "tsc -w",
+    "compile": "webpack",
+    "watch": "webpack --watch",
     "postinstall": "yarn compile"
   },
   "dependencies": {
